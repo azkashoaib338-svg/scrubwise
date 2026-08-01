@@ -21,17 +21,23 @@ export function Hero() {
             by considered ingredients and gentle exfoliation.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="rounded-full">
-              <Link href="/advisor">Find My Scrub</Link>
-            </Button>
+       <Button
+  size="lg"
+  nativeButton={false} 
+  className="rounded-full"
+  render={<Link href="/advisor" />}
+>
+  Find My Scrub
+</Button>
             <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full"
-            >
-              <Link href="/shop">Shop All Scrubs</Link>
-            </Button>
+  size="lg"
+  variant="outline"
+  nativeButton={false} 
+  className="rounded-full"
+  render={<Link href="/shop" />}
+>
+  Shop All Scrubs
+</Button>
           </div>
           <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-2">

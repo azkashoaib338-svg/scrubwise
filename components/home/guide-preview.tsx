@@ -19,9 +19,9 @@ export function GuidePreview() {
           ))}
         </div>
         <div className="mt-10 flex justify-center">
-          <Button asChild variant="outline" className="rounded-full">
-            <Link href="/guide">Read the full guide</Link>
-          </Button>
+         <Button  nativeButton={false} render={<Link href="/guide" />} variant="outline" className="rounded-full">
+  Read the full guide
+</Button>
         </div>
       </div>
     </section>

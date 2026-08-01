@@ -37,10 +37,11 @@ export function SiteHeader() {
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-2 lg:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label="Open menu">
-                  <Menu className="size-5" />
-                </Button>
+              <SheetTrigger
+                className="inline-flex size-9 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-secondary"
+                aria-label="Open menu"
+              >
+                <Menu className="size-5" />
               </SheetTrigger>
               <SheetContent side="left" className="w-80">
                 <SheetHeader>
@@ -117,25 +118,28 @@ export function SiteHeader() {
               <Search className="size-5" />
             </Button>
             <Button
+             nativeButton={false}
               variant="ghost"
               size="icon"
-              asChild
+              render={<Link href="/account" />}
               className="hidden sm:inline-flex"
               aria-label="Account"
             >
-              <Link href="/account">
-                <User className="size-5" />
-              </Link>
+              <User className="size-5" />
             </Button>
-            <Button variant="ghost" size="icon" asChild aria-label="Cart">
-              <Link href="/cart" className="relative">
-                <ShoppingBag className="size-5" />
-                {itemCount > 0 && (
-                  <span className="absolute -right-0.5 -top-0.5 flex size-5 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">
-                    {itemCount}
-                  </span>
-                )}
-              </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+               nativeButton={false}
+              render={<Link href="/cart" className="relative" />}
+              aria-label="Cart"
+            >
+              <ShoppingBag className="size-5" />
+              {itemCount > 0 && (
+                <span className="absolute -right-0.5 -top-0.5 flex size-5 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">
+                  {itemCount}
+                </span>
+              )}
             </Button>
           </div>
         </div>

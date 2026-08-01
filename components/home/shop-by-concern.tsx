@@ -16,9 +16,14 @@ export function ShopByConcern() {
         <ConcernGrid items={concerns.slice(0, 6)} />
       </div>
       <div className="mt-8 flex justify-center">
-        <Button asChild variant="outline" className="rounded-full">
-          <Link href="/concerns">View all concerns</Link>
-        </Button>
+       <Button
+        nativeButton={false}
+  variant="outline"
+  className="rounded-full"
+  render={<Link href="/concerns" />}
+>
+  View all concerns
+</Button>
       </div>
     </section>
   )

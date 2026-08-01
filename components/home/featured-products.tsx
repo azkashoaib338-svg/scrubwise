@@ -20,9 +20,9 @@ export function FeaturedProducts() {
           ))}
         </div>
         <div className="mt-10 flex justify-center">
-          <Button asChild className="rounded-full">
-            <Link href="/shop">Shop all scrubs</Link>
-          </Button>
+       <Button  nativeButton={false} render={<Link href="/shop" />} className="rounded-full">
+  Shop all scrubs
+</Button>
         </div>
       </div>
     </section>

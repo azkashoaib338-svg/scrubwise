@@ -6,6 +6,7 @@ import { WishlistProvider } from '@/components/cart/wishlist-provider'
 import { SiteHeader } from '@/components/layout/site-header'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { Toaster } from '@/components/ui/sonner'
+import { ChatWidget } from '@/components/ai-consultant/chat-widget'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -50,6 +51,7 @@ export default function RootLayout({
           </WishlistProvider>
         </CartProvider>
         <Toaster position="top-center" />
+         <ChatWidget />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

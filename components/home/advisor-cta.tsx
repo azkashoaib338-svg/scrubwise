@@ -18,17 +18,16 @@ export function AdvisorCta() {
             Advisor will suggest suitable products for a gentle, personalized
             routine.
           </p>
-          <Button
-            asChild
-            size="lg"
-            variant="secondary"
-            className="rounded-full"
-          >
-            <Link href="/advisor">
-              <Sparkles className="size-4" />
-              Start My Skin Assessment
-            </Link>
-          </Button>
+         <Button
+          nativeButton={false}
+  render={<Link href="/advisor" />}
+  size="lg"
+  variant="secondary"
+  className="rounded-full"
+>
+  <Sparkles className="size-4" />
+  Start My Skin Assessment
+</Button>
         </div>
         <div className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-primary-foreground/10" />
         <div className="pointer-events-none absolute -bottom-20 -left-10 size-72 rounded-full bg-primary-foreground/5" />

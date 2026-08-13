@@ -2,9 +2,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/section-heading'
 import { ConcernGrid } from '@/components/concern/concern-grid'
-import { concerns } from '@/lib/data/concerns'
+import { getAllConcerns } from '@/lib/db/content'
 
-export function ShopByConcern() {
+export async function ShopByConcern() {
+  const concerns = await getAllConcerns()
+
   return (
     <section className="mx-auto max-w-7xl px-4 py-16">
       <SectionHeading

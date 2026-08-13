@@ -2,9 +2,11 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { SectionHeading } from '@/components/section-heading'
 import { ArticleCard } from '@/components/guide/article-card'
-import { articles } from '@/lib/data/articles'
+import { getAllArticles } from '@/lib/db/content'
 
-export function GuidePreview() {
+export async function GuidePreview() {
+  const articles = await getAllArticles()
+
   return (
     <section className="bg-secondary/40 py-16">
       <div className="mx-auto max-w-7xl px-4">

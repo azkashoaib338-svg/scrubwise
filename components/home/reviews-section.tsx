@@ -1,8 +1,10 @@
 import { SectionHeading } from '@/components/section-heading'
 import { StarRating } from '@/components/product/star-rating'
-import { testimonials } from '@/lib/data/testimonials'
+import { getAllTestimonials } from '@/lib/db/content'
 
-export function ReviewsSection() {
+export async function ReviewsSection() {
+  const testimonials = await getAllTestimonials()
+
   return (
     <section className="mx-auto max-w-7xl px-4 py-16">
       <SectionHeading

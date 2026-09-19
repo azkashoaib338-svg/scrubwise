@@ -43,3 +43,17 @@ function stripMongoId(doc: any): Product {
   const { _id, ...rest } = doc
   return rest as Product
 }
+export async function searchProducts(query: string): Promise<Product[]> {
+  const collection = await getCollection()
+  const docs = await collection
+    .find({
+      $or: [
+        { name: { $regex: query, $options: 'i' } },
+        { description: { $regex: query, $options: 'i' } },
+        { concerns: { $regex: query, $options: 'i' } },
+        { mainIngredients: { $regex: query, $options: 'i' } },
+      ],
+    })
+    .toArray()
+  return docs.map(stripMongoId)
+}
